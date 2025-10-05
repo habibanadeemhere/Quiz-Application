@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Page</title>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+<div class="form-container">
+  <h1 class="glow">💖 Welcome to the JavaScript Quiz 💖</h1>
+  <p>Enter your details to begin the challenge ✨</p>
+
+  <input type="text" id="fname" placeholder="First Name ✨"><br>
+  <input type="text" id="lname" placeholder="Last Name 🌸"><br>
+  <input type="text" id="roll" placeholder="Roll Number 🎓"><br>
+  <input type="email" id="email" placeholder="Email 📧"><br>
+
+  <button onclick="goToQuiz()">Start Quiz 💖</button>
+</div>
+
+<script>
+function goToQuiz() {
+  const fname = document.getElementById("fname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const roll = document.getElementById("roll").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  if (!fname || !lname || !roll || !email) {
+    Swal.fire("⚠️ Oops!", "Please fill all fields before starting!", "warning");
+    return;
+  }
+
+  if (!email.includes("@") || !email.includes(".")) {
+    Swal.fire("📧 Invalid Email!", "Please enter a valid email address.", "error");
+    return;
+  }
+
+
+  localStorage.setItem("fname", fname);
+  localStorage.setItem("lname", lname);
+  localStorage.setItem("roll", roll);
+  localStorage.setItem("email", email);
+
+
+  Swal.fire({
+    title: "🎉 All Set!",
+    text: "Let's start your quiz, " + fname + "!",
+    icon: "success",
+    showConfirmButton: false,
+    timer: 1500
+  });
+
+  setTimeout(() => {
+    window.location.href = "quiz.html";
+  }, 1600);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+ body {
+    font-family: "Poppins", sans-serif;
+    background: url("https://i.pinimg.com/originals/3b/e8/ba/3be8ba724e3bc3c01ab91b478eae2749.gif") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .form-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 25px #ff33cc;
+    width: 90%;
+    max-width: 420px;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff99ff;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+  }
+
+  p {
+    color: #ddd;
+    margin-bottom: 25px;
+  }
+
+  input {
+    width: 85%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid #ff66cc;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  input:focus {
+    border-color: #ff99ff;
+    box-shadow: 0 0 15px #ff66cc;
+  }
+
+  input::placeholder {
+    color: #ccc;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ff33cc, #ff66cc, #ff99ff);
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff66cc;
+  }
+
+  .glow {
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff33cc; }
+    to { text-shadow: 0 0 25px #ff99ff, 0 0 35px #ff66cc; }
+  }
